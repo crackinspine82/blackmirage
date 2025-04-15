@@ -1,0 +1,42 @@
+/* Add this to your global CSS (e.g., styles/globals.css or src/styles/animated-gradient.css) */
+.animated-dark-gradient-bg {
+  background: linear-gradient(270deg, #0f2027, #15262c, #000000, #0f2027);
+  background-size: 400% 400%;
+  animation: darkGradientMove 18s ease-in-out infinite;
+  opacity: 0.85;
+  background-color: #0f2027;
+  /* No border for subtle effect */
+}
+
+@keyframes darkGradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animated-orange-gradient-bg {
+  background: linear-gradient(270deg, #ff9800, #ff6e00, #ff9800);
+  background-size: 400% 400%;
+  animation: orangeGradientMove 12s ease-in-out infinite;
+  opacity: 0.9;
+  background-color: #ff9800;
+  border: 3px solid orange; /* TEMP: For debugging, remove later */
+}
+
+@keyframes orangeGradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
