@@ -75,10 +75,10 @@ interface FooterProps {
 
 export default function Footer({ className = '' }: FooterProps) {
   return (
-    <footer className={`bg-black border-t border-white/10 ${className}`}>
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <footer className={`bg-black border-t border-white/10 h-screen w-full flex flex-col justify-between ${className}`}>
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex-1 flex flex-col">
         {/* Main Footer Content */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 py-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 py-16 flex-1">
           {/* Company Info */}
           <div className="space-y-8">
             <Link href="/" className="inline-block">

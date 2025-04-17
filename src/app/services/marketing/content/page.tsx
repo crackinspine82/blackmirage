@@ -161,7 +161,32 @@ export default function ContentCreationPage() {
       <ProblemStatement
         title={problemStatement.title}
         statement={problemStatement.statement}
-        description={problemStatement.description}
+        qa={[
+          {
+            q: "Feeling like your content is actually moving the needle for your business?",
+            a: "If you’re not seeing results, you’re probably pouring effort into content that doesn’t support your goals. Let’s get clear on your strategy and track what really matters."
+          },
+          {
+            q: "Are your readers really connecting with what you publish?",
+            a: "If your audience isn’t sticking around, it might be time to rethink how you’re engaging them. Building genuine connections through meaningful content can turn casual readers into loyal fans."
+          },
+          {
+            q: "Do you and your content team feel like you’re always on the same page?",
+            a: "If things get lost in translation, your content can miss the mark. Setting up open communication and regular check-ins can help everyone stay aligned and deliver real value."
+          },
+          {
+            q: 'What is content strategy?',
+            a: 'A plan for creating, publishing, and managing content to achieve business goals.'
+          },
+          {
+            q: 'How do you ensure quality?',
+            a: 'We use expert writers, editors, and proven workflows for consistent, high-quality output.'
+          },
+          {
+            q: 'Can you create content for any industry?',
+            a: 'Yes, our team has experience in a wide range of industries and formats.'
+          }
+        ]}
       />
       
       <Approach

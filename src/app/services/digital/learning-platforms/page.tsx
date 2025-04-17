@@ -161,7 +161,20 @@ export default function LearningPlatformsPage() {
       <ProblemStatement
         title={problemStatement.title}
         statement={problemStatement.statement}
-        description={problemStatement.description}
+        qa={[
+          {
+            q: 'What is a digital learning platform?',
+            a: 'A system for delivering educational content and experiences online.'
+          },
+          {
+            q: 'Can you build custom features?',
+            a: 'Yes, we design platforms tailored to your unique learning objectives.'
+          },
+          {
+            q: 'How do you ensure engagement?',
+            a: 'We use interactive design and analytics to boost learner participation.'
+          }
+        ]}
       />
       
       <Approach

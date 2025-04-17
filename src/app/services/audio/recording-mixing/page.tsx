@@ -168,7 +168,20 @@ export default function RecordingMixingPage() {
       <ProblemStatement
         title={problemStatement.title}
         statement={problemStatement.statement}
-        description={problemStatement.description}
+        qa={[
+          {
+            q: 'What is recording and mixing?',
+            a: 'Capturing and blending audio tracks to produce a polished final sound.'
+          },
+          {
+            q: 'Do you offer mixing for different genres?',
+            a: 'Yes, our engineers work with all styles of music and content.'
+          },
+          {
+            q: 'Can you help with both recording and post-production?',
+            a: 'Absolutely, we handle everything from initial recording to the final mix.'
+          }
+        ]}
       />
       
       <Approach

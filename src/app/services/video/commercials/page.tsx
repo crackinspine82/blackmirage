@@ -162,7 +162,8 @@ export default function CommercialPage() {
       <ProblemStatement
         title={problemStatement.title}
         statement={problemStatement.statement}
-        description={problemStatement.description}
+        qa={[]}
+
       />
       
       <Approach

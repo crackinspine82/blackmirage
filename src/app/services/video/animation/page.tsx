@@ -161,7 +161,20 @@ export default function AnimationPage() {
       <ProblemStatement
         title={problemStatement.title}
         statement={problemStatement.statement}
-        description={problemStatement.description}
+        qa={[
+          {
+            q: 'What is animation production?',
+            a: 'Creating animated content for marketing, education, or entertainment.'
+          },
+          {
+            q: 'What animation styles do you offer?',
+            a: 'We produce 2D, 3D, and motion graphics animations.'
+          },
+          {
+            q: 'How do you manage complex projects?',
+            a: 'Our team coordinates all phases from concept to delivery.'
+          }
+        ]}
       />
       
       <Approach

@@ -74,7 +74,20 @@ export default function Home() {
       <ProblemStatement 
         title="The Digital Landscape is Evolving"
         statement="In today's fast-paced digital world, businesses struggle to create meaningful connections with their audience while maintaining authenticity and innovation."
-        description="We understand that standing out in the digital space isn't just about having a presence—it's about creating experiences that resonate. Our approach combines strategic thinking with creative execution to help you navigate this complex landscape and emerge as a leader in your industry."
+        qa={[
+          {
+            q: "Feeling like your digital investments are actually paying off?",
+            a: "If you're not seeing the value, you're likely experiencing wasted budget and missing out on your business goals. Better tracking and clearer goals for your digital efforts could be the key to fixing this."
+          },
+          {
+            q: "Are your users really connecting with your brand for the long haul?",
+            a: "When users aren't truly connecting, you'll probably see a lot of them leaving and not building a real relationship with your brand. Focusing on creating meaningful interactions and a strong community around your brand can help build that lasting loyalty."
+          },
+          {
+            q: "Do you and your marketing partner feel like you're always on the same wavelength?",
+            a: "If there's a communication breakdown, you'll likely end up with marketing that misses the mark and doesn't achieve what you need. Setting up clear ways to talk and making sure everyone's in the loop with regular updates can really help get you aligned."
+          },
+        ]}
       />
       <WhatWeDo />
       <Clients />

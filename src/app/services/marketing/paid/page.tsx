@@ -161,7 +161,32 @@ export default function PaidAdvertisingPage() {
       <ProblemStatement
         title={problemStatement.title}
         statement={problemStatement.statement}
-        description={problemStatement.description}
+        qa={[
+          {
+            q: "Feeling like your ad spend is really delivering value for your business?",
+            a: "If you’re not sure, you might be wasting budget and missing out on real growth. Clearer goals and better campaign tracking can help you see the impact you’re making."
+          },
+          {
+            q: "Are your ads actually connecting with your ideal audience?",
+            a: "If you’re not getting engagement, your message might not be landing. Focusing on what your audience cares about can help your ads break through the noise."
+          },
+          {
+            q: "Do you and your advertising partner always feel in sync?",
+            a: "If communication is off, your campaigns can fall flat. Regular updates and open dialogue can keep everyone on track and working toward the same goals."
+          },
+          {
+            q: 'What is paid advertising?',
+            a: 'It involves paying for ad placements on platforms like Google, Facebook, and Instagram.'
+          },
+          {
+            q: 'How do you optimize campaigns?',
+            a: 'We use data-driven strategies and continuous testing to maximize ROI.'
+          },
+          {
+            q: 'Can you manage multiple platforms?',
+            a: 'Yes, we handle campaigns across all major advertising networks.'
+          }
+        ]}
       />
       
       <Approach

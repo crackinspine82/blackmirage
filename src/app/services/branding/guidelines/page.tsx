@@ -161,7 +161,8 @@ export default function BrandGuidelinesPage() {
       <ProblemStatement
         title={problemStatement.title}
         statement={problemStatement.statement}
-        description={problemStatement.description}
+        qa={[]}
+
       />
       
       <Approach

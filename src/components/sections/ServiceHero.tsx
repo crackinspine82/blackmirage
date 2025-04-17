@@ -38,6 +38,7 @@ interface ServiceHeroProps {
 import { useHover } from '@/contexts/HoverContext';
 
 export default function ServiceHero({ slides, BackgroundComponent = DefaultBackground }: ServiceHeroProps) {
+
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
   const { isHovered, setGlobalHover } = useHover();

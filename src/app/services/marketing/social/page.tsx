@@ -162,7 +162,32 @@ export default function SocialMarketingPage() {
       <ProblemStatement
         title={problemStatement.title}
         statement={problemStatement.statement}
-        description={problemStatement.description}
+        qa={[
+          {
+            q: 'Why is social media challenging?',
+            a: 'Standing out requires balancing creativity, data, and constant platform changes.'
+          },
+          {
+            q: 'How do you measure success?',
+            a: 'We track engagement, reach, and conversions to ensure your goals are met.'
+          },
+          {
+            q: 'Can you manage multiple platforms?',
+            a: 'Yes, we handle content, scheduling, and analytics across all major social networks.'
+          },
+          {
+            q: 'Why is social media challenging?',
+            a: 'Standing out requires balancing creativity, data, and constant platform changes.'
+          },
+          {
+            q: 'How do you measure results?',
+            a: 'We use analytics and KPIs to track engagement, reach, and conversions.'
+          },
+          {
+            q: 'Can you handle multiple platforms?',
+            a: 'Yes, we create strategies for all major social channels tailored to your goals.'
+          }
+        ]}
       />
       
       <Approach

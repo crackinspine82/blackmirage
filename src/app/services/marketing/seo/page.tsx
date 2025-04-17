@@ -162,7 +162,20 @@ export default function SEOPage() {
       <ProblemStatement
         title={problemStatement.title}
         statement={problemStatement.statement}
-        description={problemStatement.description}
+        qa={[
+          {
+            q: 'Why invest in SEO?',
+            a: 'SEO increases visibility, attracts organic traffic, and drives long-term growth.'
+          },
+          {
+            q: 'How do you measure SEO success?',
+            a: 'We track rankings, organic traffic, conversions, and engagement.'
+          },
+          {
+            q: 'Do you keep up with algorithm changes?',
+            a: 'Yes, we stay current and adapt strategies to deliver consistent results.'
+          }
+        ]}
       />
       
       <Approach

@@ -143,7 +143,20 @@ export default function UXDesignPage() {
       <ProblemStatement
         title={problemStatement.title}
         statement={problemStatement.statement}
-        description={problemStatement.description}
+        qa={[
+          {
+            q: 'What is UX design?',
+            a: 'User experience (UX) design focuses on creating intuitive, enjoyable digital experiences.'
+          },
+          {
+            q: 'How do you ensure usability?',
+            a: 'We conduct user research, prototyping, and testing to optimize usability.'
+          },
+          {
+            q: 'Can you redesign existing products?',
+            a: 'Yes, we improve and modernize legacy interfaces for better results.'
+          }
+        ]}
       />
       
       <Approach

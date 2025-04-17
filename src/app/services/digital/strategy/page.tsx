@@ -161,7 +161,20 @@ export default function StrategyConsultingPage() {
       <ProblemStatement
         title={problemStatement.title}
         statement={problemStatement.statement}
-        description={problemStatement.description}
+        qa={[
+          {
+            q: 'What is digital strategy?',
+            a: 'A plan that leverages technology and data to achieve business goals.'
+          },
+          {
+            q: 'How do you develop strategies?',
+            a: 'We analyze your needs, competitors, and market to create a tailored roadmap.'
+          },
+          {
+            q: 'Can you help with implementation?',
+            a: 'Yes, we guide you from planning through execution and optimization.'
+          }
+        ]}
       />
       
       <Approach

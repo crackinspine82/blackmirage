@@ -161,7 +161,8 @@ export default function EcommercePage() {
       <ProblemStatement
         title={problemStatement.title}
         statement={problemStatement.statement}
-        description={problemStatement.description}
+        qa={[]}
+
       />
       
       <Approach

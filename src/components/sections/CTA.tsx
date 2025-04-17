@@ -3,21 +3,17 @@
 import React from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+import SoundWaveBackground from '../three/SoundWaveBackground';
 
 export default function CTA() {
   return (
-    <section className="min-h-screen flex items-center relative overflow-hidden">
-      {/* Background with gradient and pattern */}
-      <div className="absolute inset-0 bg-gradient-to-br from-pink-200 to-purple-300">
-        <div className="absolute inset-0">
-          <div className="absolute -inset-x-40 -top-40 h-[500px] w-[1000px] bg-gradient-to-br from-pink-300 via-purple-300 to-pink-300 blur-3xl opacity-70 animate-slow-spin"></div>
-          <div className="absolute -inset-x-40 -bottom-40 h-[500px] w-[1000px] bg-gradient-to-br from-purple-300 via-pink-300 to-purple-300 blur-3xl opacity-70 animate-slow-spin-reverse"></div>
-        </div>
-      </div>
-
+    <section className="min-h-screen flex items-center relative overflow-hidden bg-white">
+      {/* Animated Sound Wave Background */}
+      <SoundWaveBackground />
       {/* Content */}
       <div className="relative w-full">
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/10 to-transparent backdrop-blur-sm"></div>
+
+
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

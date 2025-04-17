@@ -161,7 +161,20 @@ export default function BrandStrategyPage() {
       <ProblemStatement
         title={problemStatement.title}
         statement={problemStatement.statement}
-        description={problemStatement.description}
+        qa={[
+          {
+            q: 'What is brand strategy?',
+            a: 'A plan to position, differentiate, and grow your brand in the market.'
+          },
+          {
+            q: 'How do you develop strategies?',
+            a: 'Through research, workshops, and collaboration to define your unique value.'
+          },
+          {
+            q: 'Can you help reposition an existing brand?',
+            a: 'Yes, we guide brands through repositioning for new opportunities.'
+          }
+        ]}
       />
       
       <Approach

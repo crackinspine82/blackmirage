@@ -161,7 +161,20 @@ export default function MarketResearchPage() {
       <ProblemStatement
         title={problemStatement.title}
         statement={problemStatement.statement}
-        description={problemStatement.description}
+        qa={[
+          {
+            q: 'Why is market research important?',
+            a: 'It provides insights into customers, competitors, and trends for better decisions.'
+          },
+          {
+            q: 'What methods do you use?',
+            a: 'We use surveys, interviews, analytics, and competitive analysis.'
+          },
+          {
+            q: 'How are insights delivered?',
+            a: 'We provide clear reports and actionable recommendations.'
+          }
+        ]}
       />
       
       <Approach

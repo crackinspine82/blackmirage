@@ -12,7 +12,6 @@ const clients = Array(10).fill({
   logo: '/logo.png' // Using the existing Black Mirage logo
 });
 
-import OrigamiMountainBackground from "../three/OrigamiMountainBackground";
 
 export default function Clients() {
   return (

@@ -161,7 +161,20 @@ export default function VisualIdentityPage() {
       <ProblemStatement
         title={problemStatement.title}
         statement={problemStatement.statement}
-        description={problemStatement.description}
+        qa={[
+          {
+            q: 'What is visual identity?',
+            a: 'The visual elements—logo, colors, typography—that define your brand.'
+          },
+          {
+            q: 'Why is consistency important?',
+            a: 'Consistency builds recognition and trust with your audience.'
+          },
+          {
+            q: 'Can you create brand guidelines?',
+            a: 'Yes, we deliver comprehensive guides for consistent application.'
+          }
+        ]}
       />
       
       <Approach

@@ -1,15 +1,34 @@
-import React, { useRef, useMemo } from "react";
+import React, { useRef } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import * as THREE from "three";
 
+declare global {
+  interface Window {
+    smokeMeshes: THREE.Mesh[];
+  }
+}
+
 // Helper for a single smoke particle with blurred texture
-function SmokeParticle({ position, velocity, opacity, size, texture, bounds, onRespawn, refFn }: any) {
+interface SmokeParticleProps {
+  position: [number, number, number];
+  velocity: [number, number, number];
+  opacity: number;
+  size: number;
+  texture: THREE.Texture;
+  bounds: { left: number; right: number; top: number; bottom: number };
+  onRespawn: (mesh: THREE.Mesh) => void;
+  refFn: (mesh: THREE.Mesh) => void;
+}
+
+function SmokeParticle({ position, velocity, opacity, size, texture, bounds, onRespawn, refFn }: SmokeParticleProps) {
   const mesh = useRef<THREE.Mesh>(null!);
   React.useEffect(() => { if (refFn) refFn(mesh.current); }, [refFn]);
   useFrame(() => {
     if (mesh.current) {
       mesh.current.position.x += velocity[0];
-      mesh.current.material.opacity = opacity;
+      if (mesh.current.material && 'opacity' in mesh.current.material) {
+  (mesh.current.material as THREE.MeshBasicMaterial).opacity = opacity;
+}
       // If out of left bound, respawn at right
       if (mesh.current.position.x < bounds.left) {
         if (onRespawn) onRespawn(mesh.current);
@@ -48,8 +67,12 @@ function SmokeParticles({ texture }: { texture: THREE.Texture }) {
     for (let i = 0; i < 1700; i++) { // Much thicker
       // Distribute X across the whole range so smoke is everywhere
       arr.push({
-        position: [bounds.left + Math.random() * (bounds.right - bounds.left), Math.random() * (bounds.top - bounds.bottom) + bounds.bottom, 0],
-        velocity: [-(0.00075 + Math.random() * 0.00075), 0, 0],
+        position: [
+  bounds.left + Math.random() * (bounds.right - bounds.left),
+  Math.random() * (bounds.top - bounds.bottom) + bounds.bottom,
+  0 as number
+] as [number, number, number],
+        velocity: [-(0.00075 + Math.random() * 0.00075), 0, 0] as [number, number, number],
         baseY: Math.random() * (bounds.top - bounds.bottom) + bounds.bottom,
         wave1Amp: 0.08 + Math.random() * 0.11,
         wave1Freq: 0.15 + Math.random() * 0.18,
@@ -82,7 +105,7 @@ function SmokeParticles({ texture }: { texture: THREE.Texture }) {
   // Animate sine-wave undulation for natural movement
   useFrame(({ clock }) => {
     particles.forEach((p, i) => {
-      const mesh = (window as any).smokeMeshes?.[i];
+      const mesh = ((window as unknown as { smokeMeshes?: THREE.Mesh[] }).smokeMeshes)?.[i];
       if (mesh) {
         const t = clock.getElapsedTime();
         mesh.position.y = mesh.userData.baseY
@@ -93,7 +116,7 @@ function SmokeParticles({ texture }: { texture: THREE.Texture }) {
   });
 
   // Store mesh refs globally for sine animation (not ideal, but avoids rerender)
-  (window as any).smokeMeshes = (window as any).smokeMeshes || [];
+  window.smokeMeshes = window.smokeMeshes || [];
 
   return (
     <>
@@ -101,9 +124,13 @@ function SmokeParticles({ texture }: { texture: THREE.Texture }) {
         <SmokeParticle
           key={i}
           {...p}
+          position={Array.isArray(p.position) && p.position.length === 3 ? [p.position[0], p.position[1], p.position[2]] as [number, number, number] : [0, 0, 0]}
+          velocity={Array.isArray(p.velocity) && p.velocity.length === 3 ? [p.velocity[0], p.velocity[1], p.velocity[2]] as [number, number, number] : [0, 0, 0]}
           bounds={bounds}
           onRespawn={handleRespawn}
-          refFn={mesh => ((window as any).smokeMeshes[i] = mesh)}
+          refFn={(mesh: THREE.Mesh) => {
+            (window as unknown as { smokeMeshes: THREE.Mesh[] }).smokeMeshes[i] = mesh;
+          }}
         />
       ))}
     </>

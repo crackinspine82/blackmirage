@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import OrigamiTerrainBackground from '../three/OrigamiTerrainBackground';
 import { 
   RocketLaunchIcon, 
   PaintBrushIcon, 
@@ -37,15 +38,15 @@ export default function WhatWeDo() {
   ];
 
   return (
-    <section id="what-we-do" className="min-h-screen flex items-center text-secondary relative overflow-hidden">
-      {/* Animated orange gradient background */}
-      <div className="animated-orange-gradient-bg absolute inset-0 -z-10 pointer-events-none" aria-hidden="true" />
+    <section id="what-we-do" className="min-h-screen flex items-center text-black relative overflow-hidden">
+      {/* Origami Terrain Animated Background */}
+      <OrigamiTerrainBackground />
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-3xl mx-auto text-center mb-16">
-          <h2 className="text-5xl font-heading font-bold mb-6 text-white">
+          <h2 className="text-5xl font-heading font-bold mb-6 text-black">
             What We Do
           </h2>
-          <p className="text-xl text-gray-300">
+          <p className="text-xl text-black/80">
             We combine creativity and technology to deliver exceptional digital solutions that help businesses thrive in the modern world.
           </p>
         </div>
@@ -63,11 +64,11 @@ export default function WhatWeDo() {
                   <service.icon className="w-12 h-12 text-secondary group-hover:text-accent-pink transition-colors duration-300" />
                 </div>
 
-                <h3 className="text-2xl font-heading font-semibold mb-4 text-white">
+                <h3 className="text-2xl font-heading font-semibold mb-4 text-black">
                   {service.title}
                 </h3>
 
-                <p className="text-gray-300 leading-relaxed">
+                <p className="text-black/80 leading-relaxed">
                   {service.description}
                 </p>
               </div>

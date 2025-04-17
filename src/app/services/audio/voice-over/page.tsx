@@ -168,7 +168,20 @@ export default function VoiceOverPage() {
       <ProblemStatement
         title={problemStatement.title}
         statement={problemStatement.statement}
-        description={problemStatement.description}
+        qa={[
+          {
+            q: 'What is voice-over production?',
+            a: 'Recording and producing professional voice tracks for media, ads, and more.'
+          },
+          {
+            q: 'Can you help select the right voice talent?',
+            a: 'Yes, we offer a curated pool of voice artists to match your project.'
+          },
+          {
+            q: 'Do you deliver in multiple formats?',
+            a: 'We provide final audio in all standard formats for any use case.'
+          }
+        ]}
       />
       
       <Approach

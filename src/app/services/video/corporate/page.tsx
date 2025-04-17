@@ -158,7 +158,24 @@ export default function CorporateVideoPage() {
         BackgroundComponent={CorporateBackground}
       />
       
-      <ProblemStatement {...problemStatement} />
+      <ProblemStatement
+        title={problemStatement.title}
+        statement={problemStatement.statement}
+        qa={[
+          {
+            q: 'What is corporate video production?',
+            a: 'Creating professional video content for internal and external business needs.'
+          },
+          {
+            q: 'How do you ensure brand alignment?',
+            a: 'We work closely with your team to align messaging, tone, and visuals.'
+          },
+          {
+            q: 'Can you handle end-to-end production?',
+            a: 'Yes, from concept to final delivery, we manage the entire process.'
+          }
+        ]}
+      />
       
       <Approach {...approach} />
       

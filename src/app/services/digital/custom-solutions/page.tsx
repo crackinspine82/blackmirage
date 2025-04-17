@@ -75,7 +75,20 @@ export default function CustomDigitalSolutions() {
       <ProblemStatement
         title="The Digital Challenge"
         statement="In today's rapidly evolving digital landscape, businesses face unique challenges that off-the-shelf solutions can't address."
-        description="Legacy systems, disconnected processes, and scalability issues can hold your business back. Our custom solutions are designed to overcome these challenges and drive your digital transformation forward."
+        qa={[
+          {
+            q: 'Why choose custom solutions?',
+            a: 'They address your unique needs, integrate with your systems, and scale as you grow.'
+          },
+          {
+            q: 'How do you approach custom development?',
+            a: 'We start with discovery, then design, build, and iterate with your feedback.'
+          },
+          {
+            q: 'Can you modernize legacy systems?',
+            a: 'Yes, we specialize in upgrading and integrating legacy tech.'
+          }
+        ]}
       />
 
       <Approach

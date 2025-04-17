@@ -162,7 +162,20 @@ export default function TraditionalAdvertisingPage() {
       <ProblemStatement
         title={problemStatement.title}
         statement={problemStatement.statement}
-        description={problemStatement.description}
+        qa={[
+          {
+            q: 'What is traditional advertising?',
+            a: 'It includes TV, radio, print, and outdoor media to reach broad audiences.'
+          },
+          {
+            q: 'Is it still effective?',
+            a: 'Yes, when combined with digital strategies and targeted messaging.'
+          },
+          {
+            q: 'Can you handle large campaigns?',
+            a: 'We manage campaigns of all sizes, from local to national.'
+          }
+        ]}
       />
       
       <Approach

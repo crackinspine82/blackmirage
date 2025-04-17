@@ -166,7 +166,20 @@ export default function AudioProductionPage() {
       <ProblemStatement
         title={problemStatement.title}
         statement={problemStatement.statement}
-        description={problemStatement.description}
+        qa={[
+          {
+            q: 'What is audio production?',
+            a: 'The process of recording, editing, and mixing sound for media.'
+          },
+          {
+            q: 'Do you offer mastering?',
+            a: 'Yes, we provide full mastering for broadcast and streaming.'
+          },
+          {
+            q: 'Can you produce for different genres?',
+            a: 'Our team has experience across music, podcasts, ads, and more.'
+          }
+        ]}
       />
       
       <Approach

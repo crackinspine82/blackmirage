@@ -162,7 +162,20 @@ export default function ProductDemoPage() {
       <ProblemStatement
         title={problemStatement.title}
         statement={problemStatement.statement}
-        description={problemStatement.description}
+        qa={[
+          {
+            q: 'What is a product demo video?',
+            a: 'A video that showcases your product’s features and benefits.'
+          },
+          {
+            q: 'How do you ensure clarity?',
+            a: 'We focus on clear visuals and messaging to highlight key features.'
+          },
+          {
+            q: 'Can you create demos for any product?',
+            a: 'Yes, we tailor demos for both consumer and industrial products.'
+          }
+        ]}
       />
       
       <Approach

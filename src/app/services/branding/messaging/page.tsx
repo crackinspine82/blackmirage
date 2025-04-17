@@ -161,7 +161,20 @@ export default function BrandMessagingPage() {
       <ProblemStatement
         title={problemStatement.title}
         statement={problemStatement.statement}
-        description={problemStatement.description}
+        qa={[
+          {
+            q: 'What is brand messaging?',
+            a: 'The language and stories that communicate your brand’s value.'
+          },
+          {
+            q: 'How do you create compelling messages?',
+            a: 'We use research and creativity to craft messages that resonate.'
+          },
+          {
+            q: 'Can you align messaging across channels?',
+            a: 'Yes, we ensure consistency in voice and message everywhere.'
+          }
+        ]}
       />
       
       <Approach

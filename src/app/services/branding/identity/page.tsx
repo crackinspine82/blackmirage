@@ -162,7 +162,20 @@ export default function BrandIdentityPage() {
       <ProblemStatement
         title={problemStatement.title}
         statement={problemStatement.statement}
-        description={problemStatement.description}
+        qa={[
+          {
+            q: 'What is brand identity?',
+            a: 'The visual and verbal elements that represent your brand.'
+          },
+          {
+            q: 'How do you create a strong identity?',
+            a: 'We combine strategy, design, and messaging for a cohesive presence.'
+          },
+          {
+            q: 'Can you refresh existing brands?',
+            a: 'Yes, we modernize and reposition brands for today’s market.'
+          }
+        ]}
       />
       
       <Approach

@@ -161,7 +161,20 @@ export default function MobileAppsPage() {
       <ProblemStatement
         title={problemStatement.title}
         statement={problemStatement.statement}
-        description={problemStatement.description}
+        qa={[
+          {
+            q: 'What platforms do you support?',
+            a: 'We build native and cross-platform apps for iOS and Android, ensuring seamless experiences across all devices.'
+          },
+          {
+            q: 'How do you ensure security?',
+            a: 'Our apps follow industry best practices for security, including encryption and secure authentication.'
+          },
+          {
+            q: 'Can you scale with my business?',
+            a: 'Absolutely! Our architecture is designed for scalability, so your app can grow as your user base expands.'
+          }
+        ]}
       />
       
       <Approach

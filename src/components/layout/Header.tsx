@@ -13,70 +13,50 @@ interface NavigationLink {
 }
 
 const navigation: NavigationLink[] = [
-  { name: 'Our Story', href: '/about' },
   {
-    name: 'What We Do',
-    href: '/services',
+    name: 'Branding & Marketing',
+    href: '/services/branding',
     submenu: [
-      {
-        name: 'Audio Solutions',
-        href: '/services/audio',
-        submenu: [
-          { name: 'Recording & Mixing', href: '/services/audio/recording-mixing' },
-          { name: 'Voice-Over Services', href: '/services/audio/voice-over' },
-          { name: 'Audio Production', href: '/services/audio/production' }
-        ]
-      },
-      {
-        name: 'Video Production',
-        href: '/services/video',
-        submenu: [
-          { name: '2D & 3D Animation', href: '/services/video/animation' },
-          { name: 'Corporate Films', href: '/services/video/corporate' },
-          { name: 'Product Demos', href: '/services/video/product-demos' },
-          { name: 'TV Commercials', href: '/services/video/commercials' },
-          { name: 'Event Coverage', href: '/services/video/events' }
-        ],
-      },
-      {
-        name: 'Branding',
-        href: '/services/branding',
-        submenu: [
-          { name: 'Identity & Architecture', href: '/services/branding/identity' },
-          { name: 'Strategy & Positioning', href: '/services/branding/strategy' },
-          { name: 'Brand Messaging & Experience', href: '/services/branding/messaging' },
-          { name: 'Logo & Visual Identity Design', href: '/services/branding/visual-identity' },
-          { name: 'Brand Guidelines & Collaterals', href: '/services/branding/guidelines' },
-          { name: 'Visual Communications', href: '/services/branding/communications' },
-        ],
-      },
-      {
-        name: 'Marketing',
-        href: '/services/marketing',
-        submenu: [
-          { name: 'Market Research & Strategy', href: '/services/marketing/research' },
-          { name: 'Search Engine Optimization', href: '/services/marketing/seo' },
-          { name: 'Social Media Marketing', href: '/services/marketing/social' },
-          { name: 'Content Creation', href: '/services/marketing/content' },
-          { name: 'Paid Advertising', href: '/services/marketing/paid' },
-          { name: 'Traditional Advertising', href: '/services/marketing/traditional' },
-        ],
-      },
-      {
-        name: 'Digital Experiences',
-        href: '/services/digital',
-        submenu: [
-          { name: 'UX & Design', href: '/services/digital/ux-design' },
-          { name: 'Custom Digital Solutions', href: '/services/digital/custom-solutions' },
-          { name: 'Mobile Application', href: '/services/digital/mobile-apps' },
-          { name: 'E-commerce Platforms', href: '/services/digital/ecommerce' },
-          { name: 'Digital Learning Platforms', href: '/services/digital/learning-platforms' },
-          { name: 'Strategy & Consulting', href: '/services/digital/strategy' },
-        ],
-      },
+      { name: 'Identity & Architecture', href: '/services/branding/identity' },
+      { name: 'Strategy & Positioning', href: '/services/branding/strategy' },
+      { name: 'Brand Messaging & Experience', href: '/services/branding/messaging' },
+      { name: 'Logo & Visual Identity Design', href: '/services/branding/visual-identity' },
+      { name: 'Brand Guidelines & Collaterals', href: '/services/branding/guidelines' },
+      { name: 'Visual Communications', href: '/services/branding/communications' },
+      { name: 'Market Research & Strategy', href: '/services/marketing/research' },
+      { name: 'Search Engine Optimization', href: '/services/marketing/seo' },
+      { name: 'Social Media Marketing', href: '/services/marketing/social' },
+      { name: 'Content Creation', href: '/services/marketing/content' },
+      { name: 'Paid Advertising', href: '/services/marketing/paid' },
+      { name: 'Traditional Advertising', href: '/services/marketing/traditional' },
     ],
   },
-  { name: 'Our Work', href: '/portfolio' },
+  {
+    name: 'Audio & Video',
+    href: '/services/audio',
+    submenu: [
+      { name: 'Recording & Mixing', href: '/services/audio/recording-mixing' },
+      { name: 'Voice-Over Services', href: '/services/audio/voice-over' },
+      { name: 'Audio Production', href: '/services/audio/production' },
+      { name: '2D & 3D Animation', href: '/services/video/animation' },
+      { name: 'Corporate Films', href: '/services/video/corporate' },
+      { name: 'Product Demos', href: '/services/video/product-demos' },
+      { name: 'TV Commercials', href: '/services/video/commercials' },
+    ],
+  },
+  {
+    name: 'Digital Experiences',
+    href: '/services/digital',
+    submenu: [
+      { name: 'UX & Design', href: '/services/digital/ux-design' },
+      { name: 'Custom Digital Solutions', href: '/services/digital/custom-solutions' },
+      { name: 'Mobile Application', href: '/services/digital/mobile-apps' },
+      { name: 'E-commerce Platforms', href: '/services/digital/ecommerce' },
+      { name: 'Digital Learning Platforms', href: '/services/digital/learning-platforms' },
+      { name: 'Strategy & Consulting', href: '/services/digital/strategy' },
+    ],
+  },
+  { name: 'Our Story', href: '/about' },
   { name: 'Connect', href: '/connect' },
 ];
 

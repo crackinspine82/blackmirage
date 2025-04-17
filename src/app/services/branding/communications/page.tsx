@@ -161,7 +161,20 @@ export default function VisualCommunicationsPage() {
       <ProblemStatement
         title={problemStatement.title}
         statement={problemStatement.statement}
-        description={problemStatement.description}
+        qa={[
+          {
+            q: 'What is visual communication?',
+            a: 'Conveying ideas and messages through visuals and design.'
+          },
+          {
+            q: 'How do you ensure clarity?',
+            a: 'We use design principles to make messages clear and engaging.'
+          },
+          {
+            q: 'Can you create infographics and videos?',
+            a: 'Yes, we produce a range of visual assets for all needs.'
+          }
+        ]}
       />
       
       <Approach
