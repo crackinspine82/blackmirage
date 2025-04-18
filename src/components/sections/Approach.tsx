@@ -1,7 +1,8 @@
 'use client';
 
-import { motion, AnimatePresence } from 'framer-motion';
 import { useState } from 'react';
+import OrigamiTerrainBackground from '../three/OrigamiTerrainBackground';
+import { motion } from 'framer-motion';
 
 interface Step {
   title: string;
@@ -23,127 +24,73 @@ export default function Approach({ title, description, steps }: ApproachProps) {
   };
 
   return (
-    <section className="min-h-screen flex items-center bg-black overflow-hidden relative">
-      {/* Background gradient */}
-      <div className="absolute inset-0 animated-dark-gradient-bg">
-        <div className="absolute inset-0 bg-[url('/images/grid.svg')] opacity-5 pointer-events-none"></div>
+    <section className="min-h-screen w-full bg-white overflow-hidden relative flex items-center justify-center">
+      {/* 3D Origami Terrain Animated Background */}
+      <div className="absolute inset-0 z-0">
+        <OrigamiTerrainBackground />
       </div>
-
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
-        <div className="flex flex-col lg:flex-row gap-16 items-start">
-          {/* Left Column - Steps */}
-          <motion.div 
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="lg:w-1/2 space-y-4 order-last lg:order-first"
-          >
-            {steps.map((step, index) => (
-              <motion.div
-                key={step.title}
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="group relative"
-              >
-                {/* Card */}
-                <motion.div 
-                  className={`relative overflow-hidden rounded-lg bg-white/5 backdrop-blur-sm border border-white/10 hover:bg-white/10 transition-colors cursor-pointer`}
-                  onClick={() => toggleExpand(index)}
-                >
-                  {/* Glowing effect */}
-                  <div className="absolute -inset-x-4 -inset-y-4 bg-gradient-to-r from-accent-pink/10 to-accent-secondary/10 opacity-0 group-hover:opacity-100 transition-opacity blur-xl"></div>
-                  
-                  <div className="relative p-3">
-                    <div className="flex items-center gap-3">
-                      {/* Icon */}
-                      <div 
-                        className="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-md bg-accent-secondary/10"
-                        dangerouslySetInnerHTML={{ __html: step.icon }}
-                      />
-                      
-                      {/* Title */}
-                      <h3 className="text-base font-heading font-bold text-white group-hover:text-accent-secondary transition-colors flex-1">
-                        {step.title}
-                      </h3>
-
-                      {/* Expand/Collapse Icon */}
-                      <motion.svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        strokeWidth={2}
-                        stroke="currentColor"
-                        className="w-4 h-4 text-accent-secondary"
-                        animate={{ rotate: expandedIndex === index ? 180 : 0 }}
-                        transition={{ duration: 0.3 }}
-                      >
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-                      </motion.svg>
-                    </div>
-
-                    {/* Expandable Description */}
-                    <AnimatePresence>
-                      {expandedIndex === index && (
-                        <motion.div
-                          initial={{ height: 0, opacity: 0 }}
-                          animate={{ height: "auto", opacity: 1 }}
-                          exit={{ height: 0, opacity: 0 }}
-                          transition={{ duration: 0.3 }}
-                          className="overflow-hidden"
-                        >
-                          <p className="text-sm text-gray-400 mt-3 pl-11">
-                            {step.description}
-                          </p>
-                        </motion.div>
-                      )}
-                    </AnimatePresence>
-                  </div>
-
-                  {/* Connecting line for all except last item */}
-                  {index !== steps.length - 1 && (
-                    <div className="absolute left-[1.6rem] bottom-[-1rem] w-0.5 h-4 bg-gradient-to-b from-accent-secondary/30 to-transparent"></div>
-                  )}
-                </motion.div>
-              </motion.div>
-            ))}
-          </motion.div>
-
-          {/* Right Column - Title and Description */}
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="lg:w-1/2 lg:sticky lg:top-24 order-first lg:order-last"
-          >
-            <div className="max-w-xl">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-              >
-                <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-white mb-8 leading-tight">
-                  {title}
-                </h2>
-              </motion.div>
-              
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.3 }}
-              >
-                <p className="text-xl text-gray-300">
-                  {description}
-                </p>
-              </motion.div>
-            </div>
-          </motion.div>
+        {/* Title and Description on top */}
+        <div className="flex flex-col lg:flex-row mb-12">
+          <div className="w-full lg:w-1/2 flex flex-col justify-start items-start mb-8 lg:mb-0">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-black mb-6 leading-tight">
+              {title}
+            </h2>
+            <p className="text-2xl md:text-3xl font-medium text-black mb-6">
+              {description}
+            </p>
+          </div>
+          <div className="hidden lg:block lg:w-1/2"></div>
         </div>
+        {/* Cards: Full width, responsive grid */}
+        <div className="w-full">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            {steps.map((step, index) => {
+              // Randomize the floating animation per card
+              const randomX = Math.random() * 8 - 4; // between -4 and 4
+              const randomY = Math.random() * 8 - 4; // between -4 and 4
+              return (
+                <motion.div
+                  key={step.title}
+                  className={`rounded-xl shadow-lg p-6 flex flex-col h-full justify-between cursor-pointer transition-transform hover:scale-105 ${expandedIndex === index ? 'ring-4 ring-orange-400' : ''}`}
+                  style={{ backgroundColor: '#ff7714' }}
+                  onClick={() => toggleExpand(index)}
+                  animate={{
+                    x: [0, randomX, 0, -randomX, 0],
+                    y: [0, randomY, 0, -randomY, 0],
+                  }}
+                  transition={{
+                    duration: 6 + Math.random() * 2, // 6-8s
+                    repeat: Infinity,
+                    repeatType: 'loop',
+                    ease: 'easeInOut',
+                  }}
+                >
+                  {/* Title and Number */}
+                  <div className="flex items-center mb-16">
+                    <h3 className="text-2xl font-bold text-black text-left flex-1">
+                      {step.title}
+                    </h3>
+                    <span className="text-black text-3xl font-mono ml-4">{String(index + 1).padStart(3, '.0')}</span>
+                  </div>
+                  {/* Large logo in the center */}
+                  <div className="flex justify-center items-center mb-6">
+                    <span
+                      className="w-40 h-40 flex items-center justify-center text-black"
+                      style={{ color: 'black', fontSize: '10rem', lineHeight: 1 }}
+                      dangerouslySetInnerHTML={{ __html: step.icon }}
+                    />
+                  </div>
+                  {/* Description at the bottom */}
+                  <p className="text-black text-xl opacity-90 mt-4 text-left">
+                    {step.description}
+                  </p>
+                </motion.div>
+              );
+            })}
+           </div>
+        </div>
+
       </div>
     </section>
   );

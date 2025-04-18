@@ -30,10 +30,10 @@ export default function Clients() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-1">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-24">
-          <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mb-6">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-white mb-6 leading-tight">
             Brands that like working with us
           </h2>
-          <p className="text-gray-300 text-lg mt-8">
+          <p className="text-2xl md:text-3xl font-medium text-white mb-6">
             Success is built together. We thrive on collaboration and are honored to work alongside these forward-thinking brands, helping them connect deeply with their audience.
           </p>
         </div>

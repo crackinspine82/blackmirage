@@ -2,7 +2,7 @@
 
 import ServiceHero from '@/components/sections/ServiceHero';
 import ProblemStatement from '@/components/sections/ProblemStatement';
-import WhatWeDo from '@/components/sections/WhatWeDo';
+import Approach from '@/components/sections/Approach';
 import Clients from '@/components/sections/Clients';
 import CTA from '@/components/sections/CTA';
 import dynamic from 'next/dynamic';
@@ -89,7 +89,32 @@ export default function Home() {
           },
         ]}
       />
-      <WhatWeDo />
+      <Approach 
+        title="Our Approach"
+        description="We blend strategy, creativity, and technology to deliver solutions that drive real business results. Here’s how we do it:"
+        steps={[
+          {
+            title: 'Discover',
+            description: 'We dive deep into your business, audience, and goals to uncover key insights.',
+            icon: '<svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="24" cy="24" r="22" stroke="currentColor" stroke-width="4"/><path d="M24 14v10l7 7" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>'
+          },
+          {
+            title: 'Design',
+            description: 'We create compelling, user-focused designs that bring your brand to life.',
+            icon: '<svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="8" y="8" width="32" height="32" rx="6" stroke="currentColor" stroke-width="4"/><path d="M16 32l16-16" stroke="currentColor" stroke-width="4" stroke-linecap="round"/></svg>'
+          },
+          {
+            title: 'Develop',
+            description: 'We build robust, scalable solutions using the latest technology.',
+            icon: '<svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 24h32" stroke="currentColor" stroke-width="4" stroke-linecap="round"/><path d="M24 8v32" stroke="currentColor" stroke-width="4" stroke-linecap="round"/></svg>'
+          },
+          {
+            title: 'Deliver',
+            description: 'We launch, optimize, and support your project for ongoing success.',
+            icon: '<svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 40l32-32" stroke="currentColor" stroke-width="4" stroke-linecap="round"/><path d="M24 8v32" stroke="currentColor" stroke-width="4" stroke-linecap="round"/></svg>'
+          },
+        ]}
+      />
       <Clients />
       <CTA />
     </main>

@@ -69,14 +69,27 @@ export default function Header({ className = '' }: HeaderProps) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [openMobileSubmenu, setOpenMobileSubmenu] = useState<string | null>(null);
   const [openMobileSubSubmenu, setOpenMobileSubSubmenu] = useState<string | null>(null);
+  const [showHeader, setShowHeader] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
   const { scrollY } = useScroll();
   const { setGlobalHover } = useHover();
 
   useEffect(() => {
     return scrollY.onChange((latest) => {
       setIsScrolled(latest > 50);
+      setShowHeader(() => {
+        if (latest < 10) return true; // always show at top
+        if (latest > lastScrollY) {
+          // scrolling down
+          return false;
+        } else {
+          // scrolling up
+          return true;
+        }
+      });
+      setLastScrollY(latest);
     });
-  }, [scrollY]);
+  }, [scrollY, lastScrollY]);
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -102,7 +115,7 @@ export default function Header({ className = '' }: HeaderProps) {
     <motion.header
       className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-black/50 backdrop-blur-md' : 'bg-transparent'} ${className}`}
       initial={{ y: -100 }}
-      animate={{ y: 0 }}
+      animate={{ y: showHeader ? 0 : -100 }}
       transition={{ duration: 0.3 }}
       onMouseEnter={() => setGlobalHover(true)}
       onMouseLeave={() => setGlobalHover(false)}
